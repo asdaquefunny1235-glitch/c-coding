@@ -5,10 +5,15 @@ int main() {
     printf("enter x:");
     scanf("%d", &x);
     printf("%d\n",x);
+    int isPrime = 1;
     for(int i=2; i<x; i+=1){
-        if((x%i)==0)
-            printf("%d is not a prime number.\n",x);
-        else
-            printf("%d is a prime number.\n",x);
-            return 0;
+        printf("%d %d \n",i, x%i);
+        if((x%i)==0){
+            isPrime = 0;
+            break;
+        }
     }
+    if(isPrime==1)
+        printf("%d is Prime\n",x);
+    else
+        printf("%d is not a Prime",x);
